@@ -15,9 +15,10 @@ npm run dev
 ## Préprocesseur - Utilisation de Sass SCSS
 Suivre la [documentation](https://symfony.com/doc/current/frontend/encore/css-preprocessors.html) pour activer Sass/SCSS dans un projet.
 
-Dans le fichier webpack.config.js, décommenter la ligne suivante : ,
-.enableSassLoader() ,
-Puis exécuter : ,
+Dans le fichier webpack.config.js, décommenter la ligne suivante : 
+```javascript
+.enableSassLoader() 
+Puis exécuter : 
 ```bash
 npm install sass-loader@^13.0.0 sass --save-dev
 ```
