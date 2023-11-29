@@ -1,3 +1,25 @@
+# Installation du projet Symfony
+## Prérequis 
+```bash
+php -v
+```
+```bash
+composer -v
+```
+```bash
+node -v
+```
+```bash
+npm -v
+```
+```bash
+symfony check:requirements
+```
+## Initialisation de votre projet avec la version 6.3
+```bash
+symfony new votre_projet --version="6.3.*"--webapp
+```
+
 # Configuration de Webpack Encore avec Symfony
 
 ## Installation du bundle Symfony Webpack Encore
@@ -88,4 +110,27 @@ npm i bootstrap@5.3.2
 ```
 ```bash
 npm i --save bootstrap @popperjs/core
+```
+```bash
+npm install jquery @popperjs/core --save-dev
+```
+
+Dans le fichier `app.js`:  
+```javascript
+const $ = require('jquery');
+require('bootstrap');
+document.addEventListener('DOMContentLoaded', function () {
+    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
+});
+```
+puis en dessous :
+```javascript
+// or, specify which plugins you need :
+import { Tooltip, Toast, Popover } from 'bootstrap';
+```
+Dans le fichier `app.scss`:  
+```javascript
+// Import all of Bootstrap's CSS by default
+@import "~bootstrap/scss/bootstrap";
 ```
