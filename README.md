@@ -18,6 +18,7 @@ Suivre la [documentation](https://symfony.com/doc/current/frontend/encore/css-pr
 Dans le fichier webpack.config.js, décommenter la ligne suivante : 
 ```javascript
 .enableSassLoader() 
+```
 Puis exécuter : 
 ```bash
 npm install sass-loader@^13.0.0 sass --save-dev
@@ -31,9 +32,11 @@ app.scss
 ## Postprocesseur - PostCSS et Autoprefixing
 Suivre la [documentation](https://symfony.com/doc/current/frontend/encore/postcss.html) pour activer PostCSS dans un projet.
 
-Dans le fichier webpack.config.js, ajouter la ligne suivante sous .enableSassLoader() :,
+Dans le fichier webpack.config.js, ajouter la ligne suivante sous .enableSassLoader() :
+```javascript
 .enablePostCssLoader()
-Puis exécuter :,
+```
+Puis exécuter :
 ```bash
 npm install postcss-loader@^7.0.0 --save-dev
 ```
@@ -42,14 +45,19 @@ npm install postcss-loader@^7.0.0 --save-dev
 ```bash
 npm install autoprefixer --save-dev
 ```
-Créer un fichier à la racine du projet:,
-postcss.config.js,
-Puis insérer le code suivant:,
+Créer un fichier à la racine du projet:
+```javascript
+postcss.config.js
+```
+Puis insérer le code suivant:
+```javascript
 module.exports = {
     plugins: [
         require('autoprefixer')
     ]
-},
+}
+```
+
 
 
 
