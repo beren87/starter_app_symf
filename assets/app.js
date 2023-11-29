@@ -7,3 +7,13 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
+
+const $ = require('jquery');
+require('bootstrap');
+document.addEventListener('DOMContentLoaded', function () {
+    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+// or, specify which plugins you need :
+import { Tooltip, Toast, Popover } from 'bootstrap';

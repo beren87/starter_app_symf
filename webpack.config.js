@@ -44,7 +44,7 @@ Encore
 
     // configure Babel
     // .configureBabel((config) => {
-    //     config.plugins.push('@babel/a-babel-plugin');
+    //    config.plugins.push('@babel/a-babel-plugin');
     // })
 
     // enables and configure @babel/preset-env polyfills
@@ -56,7 +56,6 @@ Encore
     // enables Sass/SCSS support
     .enableSassLoader()
     .enablePostCssLoader()
-    .setOutputPath('public/build/')
     .copyFiles({
         from: './assets/images',
         to: 'images/[path][name].[hash:8].[ext]',
