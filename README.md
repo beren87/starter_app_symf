@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 ## Préprocesseur - Utilisation de Sass SCSS
-Suivez la [documentation](https://symfony.com/doc/current/frontend/encore/css-preprocessors.html) pour activer Sass/SCSS dans un projet.
+Suivez la [documentation](https://symfony.com/doc/current/frontend/encore/css-preprocessors.html) pour activer Sass/SCSS dans votre projet.
 
 Dans le fichier `webpack.config.js`, décommentez la ligne suivante : 
 ```javascript
@@ -30,7 +30,7 @@ import './styles/app.scss';
 app.scss
 
 ## Postprocesseur - PostCSS et Autoprefixing
-Suivez la [documentation](https://symfony.com/doc/current/frontend/encore/postcss.html) pour activer PostCSS dans un projet.
+Suivez la [documentation](https://symfony.com/doc/current/frontend/encore/postcss.html) pour activer PostCSS dans votre projet.
 
 Dans le fichier `webpack.config.js`, ajoutez la ligne suivante sous .enableSassLoader() :
 ```javascript
@@ -57,7 +57,35 @@ module.exports = {
 }
 ```
 Dans le fichier `package.json`, ajoutez à la liste des `devDependencies`:
+```javascript
+"browserslist": ">0.0.1"
+```
+## Référencer des images
+Suivez la [documentation](https://symfony.com/doc/current/frontend/encore/copy-files.html#referencing-image-files-from-a-template) pour copier et référencer des images dans votre projet.
 
+Créez un dossier `images` dans `assets`.
+Dans `webpack.config.js`, sous 
+```javascript
+.enableSassLoader()
+.enablePostCssLoader()
+```
+copiez le code suivant:
+```javascript
+ .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[hash:8].[ext]',
+    })
+```
+Puis exécutez : 
+```bash
+npm install file-loader@^6.0.0 --save-dev
+```
+# Installation de Bootstrap 5
+Suivez la [documentation](https://symfony.com/doc/current/frontend/encore/bootstrap.html) pour installer Bootstrap 5.
 
-
-
+```bash
+npm i bootstrap@5.3.2
+```
+```bash
+npm i --save bootstrap @popperjs/core
+```
